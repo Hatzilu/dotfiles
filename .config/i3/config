@@ -206,7 +206,7 @@ bindsym Mod1+r mode "resize"
 #bar {
 #        status_command polybar mybar 2>&1 | tee -a /tmp.polybar.log & disown
 #}
-exec sh ~/.config/polybar/launch.sh
+exec sh ~/.config/polybar/launch.sh --hack
 
 #######################################################################
 # automatically start i3-config-wizard to offer the user to create a
@@ -223,8 +223,8 @@ exec sh ~/.config/polybar/launch.sh
 exec_always feh --bg-fill ~/Downloads/wallpaper.jpg
 exec xrandr -s 1920x1080
 for_window [class="^.*"] border pixel 1
-gaps inner 20
-gaps outer 20
+gaps inner 5
+gaps outer 5
 
 #picom for transparency
-exec_always --no-startup-id picom &
+exec_always --no-startup-id picom -f &
