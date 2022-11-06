@@ -228,3 +228,11 @@ gaps outer 5
 
 #picom for transparency
 exec_always --no-startup-id picom -f &
+
+## Clipboard Screenshots
+bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
+#bindsym Ctrl+$mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
+#bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
+
+#load english and hebrew keymaps
+exec_always setxkbmap -layout en,il -variant qwerty -option grp:alt_shift_toggle
