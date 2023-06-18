@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>
+    <title>New Tab</title>
+</head>
+<body style="background: url('https://images.pling.com/img/00/00/64/68/85/1707302/dark-cat-rosewater.png');">
+    <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; gap: 10px; flex-direction: column;">
+        <h1 style="font-family: 'Courier New', Courier, monospace; font-size: 48px; color: #fff; " id="greeting-text">hi</h1>
+        <h1 style="font-family: 'Courier New', Courier, monospace; font-size: 24px; color: #fff; " id="timestamp">time</h1>
+    </div>
+    <script>
+        const greetingText = document.getElementById('greeting-text');
+        const timestamp = document.getElementById('timestamp');
+        updateTime()
+        setInterval(updateTime, 1000);
+
+
+        function updateTime() {
+            const currentTime = new Date(Date.now());
+            timestamp.innerHTML = currentTime.toLocaleTimeString();
+        
+            if (currentTime.getHours() > 17) {        
+                greetingText.innerHTML = 'Good evening';
+            }
+            if (currentTime.getHours() < 17 && currentTime.getHours() > 12) {        
+                greetingText.innerHTML = 'Good Afternoon';
+            }
+            if (currentTime.getHours() < 12) {        
+                greetingText.innerHTML = 'Good Morning';
+            }
+        }
+    </script>
+</body>
+</html>
